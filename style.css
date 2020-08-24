@@ -1,0 +1,259 @@
+.box {
+    /* clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%); */
+    height: 500px;
+    width: 500px;
+
+    background-color: orange;
+
+    transform: translate(100%, 300px);
+    transform: scale(1.5);
+    transform: rotate(0deg);
+    /* transform: skew(45deg, 15deg); */
+
+    transition: transform 2s, background 2s;
+}
+
+.box:hover {
+    background-color: green;
+    /* border-radius: 50%; */
+    transform: rotate(720deg);
+}
+
+@keyframes chayquachaylai {
+    from {
+        transform: rotate(180deg) translate(0, 0);
+        opacity: 0;
+    }
+    20% {
+        transform: rotate(0deg) translate(-50px, 0);
+        background-color: green;
+        opacity: 0.5;
+    }
+    30% {
+        transform: rotate(180deg) translate(400px, 0);
+        border-radius: 50%;
+        background-color: red;
+        opacity: 1;
+    }
+    to {
+        transform: rotate(0deg) translate(0, 0);
+        background-color: orange;
+    }
+}
+
+.box {
+    animation-name: chayquachaylai;
+    animation-timing-function: ease;
+    animation-duration: 4s;
+    animation-iteration-count: 1;
+}
+
+/* body {
+    background-color: green;
+} */
+@keyframes changeColor {
+    from {
+        background-color: #2ecc71;
+    }
+    25% {
+        background-color: #e74c3c;
+    }
+    50% {
+        background-color: #f1c40f;
+    }
+    75% {
+        background-color: #3498db;
+    }
+    to {
+        background-color: #2ecc71;
+    }
+}
+/* body {
+    animation-name: changeColor;
+    animation-timing-function: linear;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+} */
+
+.loader {
+    position: absolute;
+    top: 40%;
+    left: 45%;
+    width: 100px;
+    height: 100px;
+    border: 5px solid white;
+    border-bottom-color: transparent;
+    border-top-color: transparent;
+    border-radius: 50%;
+
+    animation-timing-function: linear;
+    animation-name: loadding;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+}
+@keyframes loadding {
+    from {
+        transform: rotate(0);
+    }
+    50% {
+        transform: rotate(-180deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.zoom-in {
+    font-size: 72px;
+    display: inline-block;
+    font-weight: 700;
+    color: #fff;
+    padding: 5px 30px;
+    margin: 50px 50px;
+    border-radius: 4px;
+    background: #ff2a6b;
+
+    animation-name: zoomIn;
+    animation-iteration-count: 1;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.1);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.boxx {
+    height: 300px;
+    width: 300px;
+    background-color: deeppink;
+}
+.boxxx {
+    margin-top: 10px;
+    height: 300px;
+    width: 300px;
+    background-color: deeppink;
+}
+.boxx.active {
+    background-color: deepskyblue;
+}
+.boxxx.active {
+    background-color: deepskyblue;
+}
+.load {
+    display: flex;
+}
+.loadding3,
+.loadding1,
+.loadding2 {
+    margin: 30px 10px;
+    background-color: deeppink;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+}
+.loadding1 {
+    animation-name: zoomIn;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+    animation-timing-function: ease-in-out;
+}
+.loadding2 {
+    animation-name: zoomIn;
+    animation-duration: 1.5s;
+    animation-delay: 0.15s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+    animation-timing-function: ease-in-out;
+}
+.loadding3 {
+    animation-name: zoomIn;
+    animation-duration: 1.5s;
+    animation-delay: 0.3s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+    animation-timing-function: ease-in-out;
+}
+@keyframes zoomIn {
+    from {
+        transform: scale(0);
+    }
+
+    30% {
+        transform: scale(1);
+    }
+
+    60% {
+        transform: scale(0);
+    }
+
+    to {
+        transform: scale(0);
+    }
+}
+.form-group {
+}
+input[type="checkbox"] {
+    display: none;
+}
+input[type="checkbox"] + label {
+    position: relative;
+    padding-left: 45px;
+}
+input[type="checkbox"] + label::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: 0px;
+    height: 20px;
+    width: 20px;
+
+    display: inline-block;
+    background-color: none;
+    border: 2px solid black;
+}
+input[type="checkbox"]:checked + label::before {
+    background-color: deeppink;
+}
+input[type="checkbox"] + label::after {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 4px;
+    height: 0px;
+    width: 0px;
+    display: inline-block;
+    border-left: 2px solid white;
+    border-bottom: 2px solid white;
+    transform: rotate(-45deg);
+    /* display: none; */
+}
+@keyframes tickV {
+    form {
+        height: 0;
+        width: 0;
+    }
+    60% {
+        height: 7px;
+        width: 0;
+    }
+    to {
+        width: 15px;
+        height: 7px;
+    }
+}
+input[type="checkbox"]:checked + label::after {
+    /* display: inline-block; */
+    animation-name: tickV;
+    animation-duration: 0.1s;
+    animation-fill-mode: both;
+}
